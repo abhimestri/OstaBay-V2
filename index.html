@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <title>Document</title>
+</head>
+<body>
+        <div class="MainBody">
+            <div class="HeaderSection">
+                <div class="Hamburger">
+                    <div class="hamburgerDesign"></div>
+                    <div class="hamburgerDesign"></div>
+                    <div class="hamburgerDesign"></div>
+                </div>
+                <header class="branding">OstaBay</header>
+                <div class="userPhotoInHeader"></div>
+            </div>
+            <div class="asideSection">
+                <aside class="asideBar">
+                    <ul class="asideSectionList">
+                        <li class="ListELements"><a class="Link" href="#">Companies</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Categories</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Products</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Attributes</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Country mst</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Packaging mst</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Finance</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Request for Quote</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Orders</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Currency</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Metrices</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="mainSection">
+                <div class="innerMainSection">
+                    <div class="mainSectionDisplayOfCategory">
+                        <h1 class="categoryTitleNav">Categories</h1>
+                        <button class="btnToAddNewCategory">+Add new category</button>
+                    </div>
+                    <div>
+                        <div class="subNavbarSection">
+                            <h2 class="subNavHeaderText">categories</h2>
+                            <input class="inputText" type="text" placeholder="search...">
+                            <ion-icon class="cloudDownload" name="cloud-download-outline"></ion-icon>
+                            <div class="Option1">
+                                <div class="EachLineForOption1"></div>
+                                <div class="EachLineForOption1"></div>
+                                <div class="EachLineForOption1"></div>
+                            </div>
+                            <ion-icon class="option3line" name="filter-outline"></ion-icon>
+                        </div>
+                        <div class="subNavAttributes">
+                            <p class="subNavCategory"> category name </p>
+                            <p class="subNavDescription"> Description  </p>
+                            <p class="subNavTags"> tags </p>
+                            <p class="subNavProducts"> Sub-category/Products </p>
+                            <p class="subNavActive/Deactive"> Active/Deactive </p>
+                        </div>
+                        <hr>
+                        <div class="sectionToDisplayCategoryList">
+                            <ul class="categoryDataList">
+                                <li class="categoryNameInList">
+                                    <!-- <p>::</p> -->
+                                    <p>></p>
+                                    <!-- <div></div> -->
+                                    <p class="categoryName">Natural stones</p>
+                                    <p class="descriptionForCategory"> some description goes here... </p>
+                                    <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
+                                    <p class="subCategoryOrProductsForCategory">2</p>
+                                    <p class="activedeactiveForCategory">ooo</p>
+                                    <!-- <p>:</p> -->
+                                    <ul class="subCategoryHidden">
+                                        <li class="subCategoryNameInList">
+                                            <!-- <p>::</p> -->
+                                            <div></div>
+                                            <p class="categoryName">Granite</p>
+                                            <p class="descriptionForCategory"> some description goes here... </p>
+                                            <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
+                                            <p class="subCategoryOrProductsForCategory">3</p>
+                                            <p class="activedeactiveForCategory">ooo</p>
+                                            <!-- <p>:</p> -->
+                                        </li>
+                                        <li class="subCategoryNameInList">
+                                            <!-- <p>::</p> -->
+                                            <div></div>
+                                            <p class="categoryName">Marble</p>
+                                            <p class="descriptionForCategory"> some description goes here... </p>
+                                            <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
+                                            <p class="subCategoryOrProductsForCategory">5</p>
+                                            <p class="activedeactiveForCategory">ooo</p>
+                                            <!-- <p>:</p> -->
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="categoryNameInList">
+                                    <!-- <p>::</p> -->
+                                    <p>></p>
+                                    <!-- <div></div> -->
+                                    <p class="categoryName">Agriculture Produce</p>
+                                    <p class="descriptionForCategory"> some description goes here... </p>
+                                    <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
+                                    <p class="subCategoryOrProductsForCategory">5</p>
+                                    <p class="activedeactiveForCategory">ooo</p>
+                                    <!-- <p>:</p> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="HiddenAddNewCategory">
+            <div>
+                <header>
+                    <div class="HeaderSection">
+                        <ion-icon class="BackArrow" name="arrow-back-outline"></ion-icon>
+                        <p class="headerText" > Add new category</p>
+                        <button class="Savebtn" >Save</button>
+                    </div>
+                </header>
+                    <hr>
+                <div class="FormFillingSection">
+                        <form class="formForCategory">
+                            <label class="labelforCategory" for="categoryInput">Category name</label><br/>
+                            <input class="categoryInput" name="categoryInput" type="text"/><br>
+                            <label class="labelforCategory">Description</label><br>
+                            <textarea class="descriptionInput" type="text" ></textarea><br>
+                            <label class="labelForTag">Tags</label><br>
+                            <input class="tagsInput" type="text"/><br>
+                            <p class="noticeForTagsInput">enter tags seperated by comas</p>
+                            <label class="parentCategoryLabel">Parent category</label><br>
+                            <select class="parentCategory">
+                                <option>parent 1</option>
+                                <option>parent 2</option>
+                            </select>
+                            <label class="featuredLabel">Featured photo</label><br>
+                            <div class="FeaturedSection">
+                                <p class="addNewPhoto">+ add new Photo</p><p class="addExistingFile">Link existing photo</p><br>
+                            </div>
+                            <label class="photos">Photo</label><br>
+                            <div class="photosSection">
+                                <p class="addNewPhoto">+ add new Photo</p><p class="addExistingFile">Link existing photo</p><br>
+                            </div>
+                            <label class="weightLabel">Weight/Volumetric</label><br>
+                            <select class="weightSelectOption">
+                                <option>weight1</option>
+                                <option>weight2</option>
+                            </select><br>
+
+                            <label class="LabelForTypeofContainer">Type of container</label><br>
+                            <div class="sectionForRadioOperation">
+                                <input class="containerType" type="checkbox"/>
+                                <p class="labelForOption">20ft</p>
+                            </div>
+                            <div class="sectionForRadioOperation">
+                                <input class="containerType" type="checkbox"/>
+                                <p class="labelForOption">40ft</p>
+                            </div>
+
+
+                            <p class="allowProductslabel"> Allow Products</p><br>
+                            <p class="noticeForAllowProducts">By enabling, this will be considered as base category which will have products</p>
+
+                            <label class="labelForImageDescription">Primary image description (displayed to vendors) </label><br>
+                            <input class="imageDescription" type="text" /><br>
+
+                            <label class="labelForModeOfTransaction">modes of transaction</label><br>
+                            <div class="sectionForRadioOperationModesofTransaction">
+                                    <div class="transactionModeRadioLabelsection">
+                                        <input class="containerType" type="checkbox" />
+                                        <p class="labelForOption">inventory based</p>
+                                    </div>
+                                    <div class="transactionModeRadioLabelsection">
+                                        <input class="containerType" type="checkbox" /> 
+                                        <p class="labelForOption">Production Based</p>              
+                                    </div>
+                                    <div class="transactionModeRadioLabelsection">
+                                        <input class="containerType" type="checkbox" />
+                                        <p class="labelForOption">Custom Requirements(RFQ Based/Reverse Auction)</p>
+                                    </div>
+                                    <div class="transactionModeRadioLabelsection"> 
+                                        <input class="containerType" type="checkbox" />
+                                        <p class="labelForOption">OstaBay managed only</p>
+                                    </div>
+                            </div>
+                            <label class="labelForQuality">Quality</label><br>
+                            <p class="qualityAddFile">+Add quality</p>
+
+                            <button class="SavebtnForFooter" type="button">Save</button>
+                        </form>  
+                </div>
+            </div>
+        </div>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="./JS/index.js"></script>
+</body>
+</html>
