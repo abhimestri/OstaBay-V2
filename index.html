@@ -8,38 +8,44 @@
 </head>
 <body>
         <div class="MainBody">
-            <div class="HeaderSection">
-                <div class="Hamburger">
-                    <div class="hamburgerDesign"></div>
-                    <div class="hamburgerDesign"></div>
-                    <div class="hamburgerDesign"></div>
+                <div class="HeaderSection">
+                    <div class="Hamburger">
+                        <div class="hamburgerDesign"></div>
+                        <div class="hamburgerDesign"></div>
+                        <div class="hamburgerDesign"></div>
+                    </div>
+                    <p class="branding">OstaBay</p>
+                    <div class="userPhotoInHeader"></div>
                 </div>
-                <header class="branding">OstaBay</header>
-                <div class="userPhotoInHeader"></div>
-            </div>
             <div class="asideSection">
                 <aside class="asideBar">
+                    <div class="asideBarBrandingsection">
+                        <p class="asideBarBrandingTitle" >OstaBay</p>
+                    </div>
                     <ul class="asideSectionList">
-                        <li class="ListELements"><a class="Link" href="#">Companies</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Companies<div class="Notification">4</div></a></li>
                         <li class="ListELements"><a class="Link" href="#">Categories</a></li>
                         <li class="ListELements"><a class="Link" href="#">Products</a></li>
                         <li class="ListELements"><a class="Link" href="#">Attributes</a></li>
                         <li class="ListELements"><a class="Link" href="#">Country mst</a></li>
                         <li class="ListELements"><a class="Link" href="#">Packaging mst</a></li>
                         <li class="ListELements"><a class="Link" href="#">Finance</a></li>
-                        <li class="ListELements"><a class="Link" href="#">Request for Quote</a></li>
-                        <li class="ListELements"><a class="Link" href="#">Orders</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Request for Quote<div class="Notification">4</div></a></li>
+                        <li class="ListELements"><a class="Link" href="#">Orders<div class="Notification">4</div></a></li>
                         <li class="ListELements"><a class="Link" href="#">Currency</a></li>
                         <li class="ListELements"><a class="Link" href="#">Metrices</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Settings</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Marketing</a></li>
+                        <li class="ListELements"><a class="Link" href="#">Listing Services</a></li>
                     </ul>
                 </aside>
             </div>
             <div class="mainSection">
+                <div class="mainSectionDisplayOfCategory">
+                    <h1 class="categoryTitleNav">Categories</h1>
+                    <button class="btnToAddNewCategory">+Add new category</button>
+                </div>
                 <div class="innerMainSection">
-                    <div class="mainSectionDisplayOfCategory">
-                        <h1 class="categoryTitleNav">Categories</h1>
-                        <button class="btnToAddNewCategory">+Add new category</button>
-                    </div>
                     <div>
                         <div class="subNavbarSection">
                             <h2 class="subNavHeaderText">categories</h2>
@@ -57,21 +63,21 @@
                             <p class="subNavDescription"> Description  </p>
                             <p class="subNavTags"> tags </p>
                             <p class="subNavProducts"> Sub-category/Products </p>
-                            <p class="subNavActive/Deactive"> Active/Deactive </p>
+                            <p class="subNavActiveDeactive"> Active/Deactive </p>
                         </div>
                         <hr>
                         <div class="sectionToDisplayCategoryList">
                             <ul class="categoryDataList">
                                 <li class="categoryNameInList">
-                                    <!-- <p>::</p> -->
-                                    <p>></p>
-                                    <!-- <div></div> -->
+                                    <img class="dragLogo" src="drag.png"/>
+                                    <ion-icon class="arrowIcon" name="caret-forward-outline"></ion-icon>
+                                    <div class="IMG"></div>
                                     <p class="categoryName">Natural stones</p>
                                     <p class="descriptionForCategory"> some description goes here... </p>
                                     <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
                                     <p class="subCategoryOrProductsForCategory">2</p>
                                     <p class="activedeactiveForCategory">ooo</p>
-                                    <!-- <p>:</p> -->
+                                    <ion-icon class="iconForDeleteandEdit" name="ellipsis-vertical-outline"></ion-icon>
                                     <ul class="subCategoryHidden">
                                         <li class="subCategoryNameInList">
                                             <!-- <p>::</p> -->
@@ -96,15 +102,15 @@
                                     </ul>
                                 </li>
                                 <li class="categoryNameInList">
-                                    <!-- <p>::</p> -->
-                                    <p>></p>
-                                    <!-- <div></div> -->
+                                    <img class="dragLogo" src="drag.png"/>
+                                    <ion-icon class="arrowIcon" name="caret-forward-outline"></ion-icon>
+                                    <div class="IMG"></div>
                                     <p class="categoryName">Agriculture Produce</p>
                                     <p class="descriptionForCategory"> some description goes here... </p>
                                     <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
                                     <p class="subCategoryOrProductsForCategory">5</p>
                                     <p class="activedeactiveForCategory">ooo</p>
-                                    <!-- <p>:</p> -->
+                                    <ion-icon class="iconForDeleteandEdit" name="ellipsis-vertical-outline"></ion-icon>
                                 </li>
                             </ul>
                         </div>
@@ -121,7 +127,6 @@
                         <button class="Savebtn" >Save</button>
                     </div>
                 </header>
-                    <hr>
                 <div class="FormFillingSection">
                         <form class="formForCategory">
                             <label class="labelforCategory" for="categoryInput">Category name</label><br/>
@@ -135,14 +140,14 @@
                             <select class="parentCategory">
                                 <option>parent 1</option>
                                 <option>parent 2</option>
-                            </select>
+                            </select><br>
                             <label class="featuredLabel">Featured photo</label><br>
                             <div class="FeaturedSection">
-                                <p class="addNewPhoto">+ add new Photo</p><p class="addExistingFile">Link existing photo</p><br>
+                                <p class="addNewPhoto">+ add new Photo</p> <ion-icon class="Clip" name="link-outline"></ion-icon><p class="addExistingFile">Link existing photo</p><br>
                             </div>
                             <label class="photos">Photo</label><br>
                             <div class="photosSection">
-                                <p class="addNewPhoto">+ add new Photo</p><p class="addExistingFile">Link existing photo</p><br>
+                                <p class="addNewPhoto">+ add new Photo</p><ion-icon class="Clip" name="link-outline"></ion-icon><p class="addExistingFile">Link existing photo</p><br>
                             </div>
                             <label class="weightLabel">Weight/Volumetric</label><br>
                             <select class="weightSelectOption">
@@ -190,7 +195,29 @@
                             <p class="qualityAddFile">+Add quality</p>
 
                             <button class="SavebtnForFooter" type="button">Save</button>
-                        </form>  
+                        </form> 
+                        <div class="rightAsideSection">
+                            <div class="categoryStatu" id="sectionForContent">
+                                <p class="Text1">Category Status</p>
+                                <p class="Text2">Deactive</p>
+                            </div>
+                            <div class="createdBy" id="sectionForContent">
+                                <p class="Text1">Created by</p>
+                                <p class="Text2">Arvind S</p>
+                            </div>
+                            <div class="created" id="sectionForContent">
+                                <p class="Text1">Created</p>
+                                <p class="Text2">06 May 2020</p>
+                            </div>
+                            <div class="updatedBy" id="sectionForContent">
+                                <p class="Text1">Updated by</p>
+                                <p class="Text2">Praveena Kumara</p>
+                            </div>
+                            <div class="updated" id="sectionForContent">
+                                <p class="Text1">Updated</p>
+                                <p class="Text2">3 hours ago</p>
+                            </div>
+                        </div> 
                 </div>
             </div>
         </div>
