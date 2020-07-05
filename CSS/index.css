@@ -471,6 +471,7 @@ body{
 
 .subCategoryHidden{
     display:none ;
+    transition: 1s ease;
 }
 .OuterShell{
     display: flex;
@@ -493,6 +494,9 @@ body{
     display: none;
 }
 .arrowIcon1{
+    display: none;
+}
+.HideIt{
     display: none;
 }
 .categoryName{
