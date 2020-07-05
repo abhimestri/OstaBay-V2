@@ -3,8 +3,37 @@
 body{
     margin: 0;
     padding: 0;
+    height: 100vh;
     font-family: 'Maven Pro', sans-serif ;
 }
+.ActiveDeactiveTogglerSwitch{
+    margin: 5% 0 0 25%;
+    width: 30px;
+    height: 10px;
+    background: #E5E9F2;
+    border-radius: 30px;
+    transition: 2s ease;
+}
+
+
+.ActiveDeactiveToggler {
+    width: 20px;
+    height: 20px;
+    margin-top: -5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+.ActiveDeactiveTogglerSwitch.active > .ActiveDeactiveToggler{
+    background-color: #067bf0;
+    opacity: 1;
+    margin-left: 20px;
+}
+
+.ActiveDeactiveTogglerSwitch.active{
+    background: #a4cdf5;
+}
+
 .inputText::placeholder{
     padding-left: 20px;
     font-size: 15px;
@@ -63,13 +92,14 @@ body{
 @media(min-width:1024px){
     .userPhotoInHeader{
         position: relative;
-        left: 30%;
+        left: 25%;
     }
     .Hamburger{
-        margin-top:-10px;
+        margin-top:10px;
     }
     .branding{
-        margin-top: 13px;
+        font-size: 3vw;
+        margin-top: 2px;
     }
 }
 
@@ -106,9 +136,10 @@ body{
         position: absolute;
         top: 0;
         width: 240px;
-        height: 102%;
+        height: 100%;
         background-color:#01081F;
         margin: 0;
+        overflow-y: scroll;
     }
     .Notification{
         width: 15px;
@@ -117,9 +148,15 @@ body{
         background: #2789E9;
         position: relative;
         left: 80%;
-        margin-top: -2vh;
+        margin-top: -2.5vh;
         color: #fff;
         padding-left: 5px;
+    }
+    .iconForCompanies{
+        color: #ccc;
+        position: relative;
+        left: -16%;
+        font-size:24px;
     }
     .asideSectionList > li {
         width: 200px;
@@ -150,6 +187,9 @@ body{
         font-weight: 600;
         font-size: 14px;
         color: #8391A7;
+        position: relative;
+        top: -0.5vh;
+        margin: 0 0 0 -20px;
     }
 }
 /*----------*/
@@ -218,22 +258,25 @@ body{
 }
 @media(min-width:1024px){
     .btnToAddNewCategory{
-        margin: 1vh 0 0 67%;
+        margin: 5vh 0 0 67%;
         font-size: 19px;
         width: 200px;
         height: 44px;
     }
+    .categoryTitleNav{
+        margin: 5vh 0 0 -10px;
+    }
 }
 @media(min-width:1100px){
     .innerMainSection{
-        width: 90%;
-        margin: 3em 0 0 1em;
+        width: 95%;
+        margin: 3em 0 0 0em;
     }
     .mainSection{
         width: 80%;
         height: 80%;
         position: absolute;
-        left: 20%;
+        left: 19%;
         top: 10%;
         overflow-x: hidden;
         overflow-y:scroll;
@@ -290,6 +333,8 @@ body{
     margin: 17px 0 0 -7px;
     float: right;
 }
+
+
 /*--- responsivness ---*/
 @media(min-width:768px){
     .subNavbarSection{
@@ -386,7 +431,6 @@ body{
         padding-left: 12.5%;
     }
 }
-/* image 4 */
 
 @media(min-width:1100px){
     .subNavCategory{
@@ -406,7 +450,7 @@ body{
         margin-left: -2vh;
     }
     .subNavActiveDeactive{
-        margin-left: -10vh;
+        margin-left: -9vh;
     }
 }
 
@@ -420,27 +464,40 @@ body{
 }
 .categoryNameInList{
     list-style: none;
-    display: flex;
     margin: 30px 0 30px 0 ;
     border-top: 1px solid #E8EAF6;
 
 }
+
 .subCategoryHidden{
-    display: none;
+    display:none ;
+}
+.OuterShell{
+    display: flex;
+}
+.ListelementsDisplay{
+    position: relative;
+    left: 5%;
+    top: 4%;
+    display: flex;
 }
 
+.subCategoryNameInList{
+    margin: 3vh 0 0 0 ;
+    list-style: none;
+}
 .IMG{
     display: none;
 }
 .dragLogo{
     display: none;
 }
-.arrowIcon{
+.arrowIcon1{
     display: none;
 }
 .categoryName{
     font-size: 12px;
-    width: 50px;
+    width: 100px;
     padding-left:20px ;
 }
 .descriptionForCategory{
@@ -474,20 +531,69 @@ body{
         padding-left: 30%;
     }
 }
-@media(min-width:1100px){
-    .descriptionForCategory{
-        font-size: 14px;
-        padding-left:9%;
+@media(min-width:768px){
+    .IMG{
         display: block;
+        width: 56px;
+        height: 56px;
+        background-color: deeppink;
+        border-radius: 8px;
+        margin: 10px 0 0 20px;
+        padding: 0;
+    }
+    .dragLogo{
+        height: 22px;
+        display: block;
+        margin: 25px 0 0 0;
+        color: #ccc;
+    }
+    .arrowIcon1{
+        margin: 30px 0 0 20px;
+        color: #5A6679;
+        display: block;
+        cursor: pointer;
+    }
+    .arrowIcon2{
+        margin: 30px 0 0 20px;
+        color: #5A6679;
+        display: none;
+        cursor: pointer;
+    }
+    .categoryName{
+        font-size: 16px;
+        padding-left: 3%;
         margin-top: 20px;
     }
-    .tagsForCategory{
-        font-size: 14px;
-        padding-left: 2%;
+    .ActiveDeactiveTogglerSwitch{
+        margin: 2% 0 0 25%;
+        width: 45px;
+        height: 15px;
+    }
+    
+    .ActiveDeactiveToggler {
+        width: 25px;
+        height: 25px;
+        margin-top: -5px;
+    }
+    .ActiveDeactiveTogglerSwitch.active > .ActiveDeactiveToggler{
+        margin-left: 20px;
+    }
+    .subCategoryOrProductsForCategory{
+        font-size: 16px;
+        padding-left: 20%;
+    }
+    .iconForDeleteandEdit{
         display: block;
-        margin-top: 20px;
+        position: relative;
+        left: 12%;
+        margin-top: 17px;
+        padding-left: 0;
+        font-size:25px ;
+    }
+}
 
-    }
+
+@media(min-width:1024px){
     .IMG{
         display: block;
         width: 56px;
@@ -498,44 +604,166 @@ body{
         padding: 0;
     }
     .dragLogo{
-        height: 25px;
+        height: 22px;
         display: block;
         margin: 25px 0 0 0;
         color: #ccc;
     }
-    .arrowIcon{
+    .arrowIcon1{
         margin: 30px 0 0 20px;
         color: #5A6679;
         display: block;
         cursor: pointer;
     }
+    .arrowIcon2{
+        margin: 30px 0 0 20px;
+        color: #5A6679;
+        display: none;
+        cursor: pointer;
+    }
     .categoryName{
-        font-size: 14px;
-        padding-left: 2%;
+        font-size: 15px;
+        padding-left: 4%;
         margin-top: 20px;
-
     }
-    .subCategoryOrProductsForCategory{
-        font-size: 12px;
-        padding-left: 8%;
-        margin-top: 20px;
-
+    .ActiveDeactiveTogglerSwitch{
+        margin: 2% 0 0 32%;
+        width: 45px;
+        height: 15px;
     }
-    .activedeactiveForCategory{
-        font-size: 12px;
-        padding-left: 15%;
-        margin-top: 20px;
-
+    
+    .ActiveDeactiveToggler {
+        width: 25px;
+        height: 25px;
+        margin-top: -5px;
+    }
+    .ActiveDeactiveTogglerSwitch.active > .ActiveDeactiveToggler{
+        margin-left: 20px;
     }
     .iconForDeleteandEdit{
         display: block;
         position: relative;
-        left: 5%;
-        margin-top: 25px;
-        padding-left: 30px;
+        left: 13%;
+        margin-top: 17px;
+        padding-left: 0;
         font-size:25px ;
     }
 }
+
+@media(min-width:1100px){
+    .descriptionForCategory{
+        font-size: 14px;
+        display: block;
+        position: relative;
+        left: -2%;
+        width: 200px;
+        margin-top: 30px;
+        white-space: -moz-pre-wrap !important;
+        white-space: -webkit-pre-wrap;          
+        white-space: -pre-wrap;                 
+        white-space: -o-pre-wrap;               
+        white-space: pre-wrap;                  
+        word-wrap: break-word;                  
+        word-break: break-all;
+        white-space: normal;
+    }
+    p.tagsForCategory{
+        font-size: 14px;
+        display: block;
+        position: relative;
+        left: 2%;
+        width: 200px;
+        margin-top: 30px;
+        white-space: -moz-pre-wrap !important;
+        white-space: -webkit-pre-wrap;          
+        white-space: -pre-wrap;                 
+        white-space: -o-pre-wrap;               
+        white-space: pre-wrap;                  
+        word-wrap: break-word;                  
+        word-break: break-all;
+        white-space: normal;
+    }
+    .IMG{
+        display: block;
+        width: 56px;
+        height: 56px;
+        background-color: deeppink;
+        border-radius: 8px;
+        margin: 10px 0 0 20px;
+        padding: 0;
+    }
+    .dragLogo{
+        height: 22px;
+        display: block;
+        margin: 25px 0 0 0;
+        color: #ccc;
+    }
+    .arrowIcon1{
+        position: relative;
+        left: 0%;
+        color: #5A6679;
+        display: block;
+        cursor: pointer;
+    }
+    .arrowIcon2{
+        position: relative;
+        left: 0%;
+        color: #5A6679;
+        display: none;
+        cursor: pointer;
+    }
+    .categoryName{
+        font-size: 14px;
+        position: relative;
+        left: -10.7%;
+        margin: 30px 0 0 0;
+        float: right;
+    }
+    .subCategoryOrProductsForCategory{
+        font-size: 12px;
+        position: relative;
+        left:-7%;
+        margin-top: 30px;
+    }
+    .ActiveDeactiveTogglerSwitch{
+        margin: 5% 0 0 0;
+        width: 45px;
+        height: 15px;
+        position: relative;
+        left: 12%;
+    }
+    .ActiveDeactiveToggler {
+        width: 25px;
+        height: 25px;
+        margin-top: -5px;
+    }
+    .ActiveDeactiveTogglerSwitch.active > .ActiveDeactiveToggler{
+        margin-left: 20px;
+    }
+    .hidden{
+        margin-left: 0vh;
+    }
+    .iconForDeleteandEdit{
+        display: block;
+        position: relative;
+        left: 21%;
+        margin-top: 30px;
+        padding-left: 0;
+        font-size:25px ;
+    }
+    .iconForDeleteandEditinSubCategory{
+        display: block;
+        position: relative;
+        left: 21.7%;
+        margin-top: 30px;
+        padding-left: 0;
+        font-size:25px ;
+    }
+}
+
+
+
+
 
 
 
@@ -577,16 +805,20 @@ body{
     border: none;
     cursor: pointer;
 }
-.rightAsideSection{
-    display: none;
+.EditOptionOfAddCategory{
+    font-size: 25px;
+    margin: auto;
 }
 
-@media(min-width:1100px){
+@media(min-width:768px){
     .Savebtn{
-        margin: 1.6vh 0 0 75%;
-        font-size: 18px;
-        color: #fff;
-    }
+        margin: 1.1vh 0 0 55%;
+    }  
+}
+@media(min-width:1024px){
+    .Savebtn{
+        margin: 1.1vh 0 0 65%;
+    }  
 }
 
 
@@ -604,32 +836,21 @@ body{
     display: none;
 }
 
-
-@media(min-width:1100px){
-    .FormFillingSection{
-        height:auto;
-        margin: 12vh 0 0 2vh;
-        overflow-y: scroll;
-    }
-    .HeaderSection{
-        position: fixed;
-        top: 0;
-        background-color: #ffffff;
-    }
+@media(min-width:768px){
     .rightAsideSection{
         display: block;
         position: fixed;
         width: 420px;
         height: 1310px;
-        left: 1020px;
+        left: 520px;
         top: 72px;  
         background: #FFFFFF;
         box-shadow: -1px 0px 0px rgba(196, 205, 213, 0.3);
-    }
+    } 
     #sectionForContent{
         width: 312px;
         height: 70px;
-        margin: 4vh 0 2vh 5vh ;
+        margin: 4vh 0 2vh 2vh ;
         border-bottom: 1px solid #E5E9F2;
     }
     .Text1{
@@ -648,6 +869,43 @@ body{
         color: #5A6679;
         padding: 0;
         margin: 0;
+    }
+    
+}
+
+@media(min-width:1024px){
+    .FormFillingSection{
+        height: 150vh;
+    }
+    .Savebtn{
+        margin: 1.1vh 0 0 65%;
+    }
+    .HeaderSection{
+        position: fixed;
+        top: 0;
+        background-color: #ffffff;
+    }
+    .rightAsideSection{
+        left: 720px;
+    }
+    
+}
+
+@media(min-width:1100px){
+    .FormFillingSection{
+        height:200vh;
+        margin: 12vh 0 0 2vh;
+    }
+    .HeaderSection{
+        position: fixed;
+        top: 0;
+        background-color: #ffffff;
+    }
+    .rightAsideSection{
+        left: 1020px;
+    }
+    #sectionForContent{
+        margin: 4vh 0 2vh 5vh ;
     }
 }
 
