@@ -55,7 +55,7 @@ function appendingList(){
     let parent = select
     let newClass = categoryName.value.split(' ').join('');
     let output = `<div class="OuterShell" id=${unique}>
-                    <img class="dragLogo" id=${newClass} ondragstart="dragStart(event)" draggable="true" ondragover="dragOver(event)" src="drag.png"/>
+                    <img class="dragLogo" id=${newClass} ondragstart="dragStart(event)" draggable="true" ondragover="dragOver(event)" src="./Assets/drag.png"/>
                     <ion-icon class="arrowIcon1" id="show${++counter}" onclick="show(id)" name="caret-forward-outline"></ion-icon>
                     <ion-icon class="arrowIcon2" id="hideshow${++counter2}" onclick="hide(id)"  name="caret-down-outline"></ion-icon>
                     <div class="IMG"  ></div>
@@ -225,7 +225,7 @@ function addQualityBtn(e){
         alert('please add quality')
     }else{
     let OutPut = `<div class="eachSectionOfQuality">
-                        <img draggable="true" id=${liValueAdded}${liValueAdded}${Math.random()+Math.random()} class="Image" src="drag.png" />
+                        <img draggable="true" id=${liValueAdded}${liValueAdded}${Math.random()+Math.random()} class="Image" src="./Assets/drag.png" />
                         <p class="Quality">${liValueAdded}</p>
                         <ion-icon data-toggle="tooltip" title="Delete" onclick="deleteQuality(${CLASS})" class="iconForDeleteQuality" name="ellipsis-vertical-outline"></ion-icon>
                     </div>`
