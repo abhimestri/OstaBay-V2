@@ -60,7 +60,7 @@ body{
 }
 
 .inputText::placeholder{
-    padding-left: 20px;
+    padding-left: 4px;
     font-size: 15px;
     font-family: 'Maven Pro', sans-serif ;
 }
@@ -253,7 +253,13 @@ input[type="file"] {
     overflow-x: hidden;
     margin-top: 3vh;
 }
-
+.searchIcon{
+    position: absolute;
+    left: 58%;
+    margin-top: 13.5px;
+    font-size: 20px;
+    color: rgb(168, 166, 166);
+}
 .mainSectionDisplayOfCategory{
     width: 100%;
     margin: 0;
@@ -360,6 +366,7 @@ input[type="file"] {
     font-size: 20px;
     margin: 20px 0 0 20px;
     float: right;
+    cursor: pointer;
 }
 .Option1{
     position: relative;
@@ -381,10 +388,17 @@ input[type="file"] {
     font-size: 22px;
     margin: 17px 0 0 -7px;
     float: right;
+    cursor: pointer;
 }
 
 
 /*--- responsivness ---*/
+@media(min-width:1100px){
+    .inputText{
+        padding-left: 50px;
+        font-size: 16px;
+    }
+}
 @media(min-width:768px){
     .subNavbarSection{
         margin:-10px 0 0 0 ;

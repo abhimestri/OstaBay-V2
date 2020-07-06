@@ -2,7 +2,6 @@
 let counter = 0,counter2 = 0;
 
 
-
 // navigate into pages 
 document.querySelector('.btnToAddNewCategory').addEventListener('click',function(){
     document.querySelector('.HiddenAddNewCategory').style.display = "block"
@@ -155,9 +154,9 @@ function dragDrop(e){
     let data = e.dataTransfer.getData("id");
 
     if(data.startsWith('parentELE') == true && e.target.parentElement.parentElement.id.startsWith('childELE') == true){
-        alert("ERROR!! can/'t add Main Category to Sub Category ")
+        alert("ERROR!! can't add Main Category to Sub Category ")
     }else if(data.startsWith('childELE') == true && e.target.parentElement.parentElement.id.startsWith('parentELE') == true){
-        alert("ERROR!! can/'t add Sub Category to Main Category ")
+        alert("ERROR!! can't add Sub Category to Main Category ")
     }else{
         let first = document.getElementById(data);
         let second = document.getElementById(e.target.parentElement.parentElement.id);
