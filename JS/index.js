@@ -1,4 +1,4 @@
-let counter = 0,counter2 = 0
+let counter = 0,counter2 = 0;
 // navigate into pages 
 document.querySelector('.btnToAddNewCategory').addEventListener('click',function(){
     document.querySelector('.HiddenAddNewCategory').style.display = "block"
@@ -11,17 +11,50 @@ document.querySelector('.BackArrow').addEventListener('click',function(){
 })
 
 // add List to UL
-document.querySelector('.SavebtnForFooter').addEventListener('click', appendingList);
+
+
+function additionOfList(id){
+    let categoryName,description,tags;
+    categoryName = document.querySelector('.categoryInput');
+    description = document.querySelector('.descriptionInput');
+    tags = document.querySelector('.tagsInput');
+    if(id){
+        console.log('inside id')
+        let DATA = [...document.getElementById(id).childNodes[9].childNodes]
+        console.log(CheckActivity);
+        console.log(DATA)
+        DATA[1].innerText = categoryName.value;
+        DATA[3].innerText = description.value;
+        DATA[5].innerText = tags.value;
+        categoryName.value = "";
+        description.value = "";
+        tags.value = "";
+        parent.value = "none";
+        let SAVEBTNFTR = document.querySelector('.SavebtnForFooter');
+        SAVEBTNFTR.setAttribute('onclick' , `additionOfList()`)
+    }else{
+        appendingList();
+    }
+}
+
+
 
 function appendingList(){
-    let categoryName = document.querySelector('.categoryInput');
-    let description = document.querySelector('.descriptionInput');
-    let tags = document.querySelector('.tagsInput');
+
+    let categoryName,description,tags;
+
+    categoryName = document.querySelector('.categoryInput');
+    description = document.querySelector('.descriptionInput');
+    tags = document.querySelector('.tagsInput');
+    if(categoryName.value == 0){
+        alert('Category Name is Required')
+    }else{
     let ul = document.querySelector('.categoryDataList');
     let select = document.querySelector('.parentCategory');
+    let unique =Math.random() * Math.random();
     let parent = select
     let newClass = categoryName.value.split(' ').join('');
-    let output = `<div class="OuterShell">
+    let output = `<div class="OuterShell" id=${unique}>
                     <img class="dragLogo" id=${newClass} ondragstart="dragStart(event)" draggable="true" ondragover="dragOver(event)" src="drag.png"/>
                     <ion-icon class="arrowIcon1" id="show${++counter}" onclick="show(id)" name="caret-forward-outline"></ion-icon>
                     <ion-icon class="arrowIcon2" id="hideshow${++counter2}" onclick="hide(id)"  name="caret-down-outline"></ion-icon>
@@ -35,40 +68,52 @@ function appendingList(){
                             <div class="ActiveDeactiveToggler "></div>
                         </div>
                     </div>
-                    <ion-icon class="iconForDeleteandEdit" name="ellipsis-vertical-outline"></ion-icon>
+                    <div class="SectionForDirectDeleteAndEdit" id=${unique+unique}>
+                        <p class="PEdit" onclick="EditListCategory(${unique})" >Edit</p>
+                        <p class="PDelete" onclick="DeleteListCategory(${unique})">Delete</p>
+                    </div>
+                    <ion-icon class="iconForDeleteandEdit" onclick=DisplayEditSec(${unique+unique}) name="ellipsis-vertical-outline"></ion-icon>
                 </div>`
-    let li = document.createElement('li');
-    let option = document.createElement('option');
-    let UL
-    if(parent.value == 'none'){
-        UL = document.createElement('ul')
-        UL.setAttribute('class' , 'subCategoryHidden')
-        UL.className += ' '+newClass
-        option.textContent = categoryName.value
-        select.appendChild(option)
-        li.innerHTML = output;
-        li.appendChild(UL)
-        li.setAttribute('class' , 'categoryNameInList');
-        li.setAttribute('id',counter)
-        li.setAttribute('ondrop',"dragDrop(event)")
-        ul.appendChild(li);
-        categoryName.value = "";
-        description.value = "";
-        tags.value = "";
-        parent.value = "none";
-    }
-    else{
-        let hiddenli = document.createElement('li')
-        hiddenli.innerHTML = output 
-        hiddenli.childNodes[0].childNodes[3].setAttribute('class','HideIt')
-        hiddenli.childNodes[0].childNodes[5].setAttribute('class','HideIt')
-        hiddenli.setAttribute('class','subCategoryNameInList')
-        let parentEle = document.querySelector('.'+parent.value.split(' ').join(''));
-        parentEle.appendChild(hiddenli)
-        categoryName.value = "";
-        description.value = "";
-        tags.value = "";
-        parent.value = "none";
+            let li = document.createElement('li');
+            let option = document.createElement('option');
+            let UL
+            if(parent.value == 'none'){
+                UL = document.createElement('ul')
+                UL.setAttribute('class' , 'subCategoryHidden')
+                UL.className += ' '+newClass
+                option.textContent = categoryName.value
+                select.appendChild(option)
+                li.innerHTML = output;
+                li.appendChild(UL)
+                li.setAttribute('class' , 'categoryNameInList');
+                li.setAttribute('id' , 'parentELE')
+                li.id += ' '+counter;
+                li.setAttribute('ondrop',"dragDrop(event)")
+                ul.appendChild(li);
+                categoryName.value = "";
+                description.value = "";
+                tags.value = "";
+                parent.value = "none";
+            }
+            else{
+                let hiddenli = document.createElement('li')
+                hiddenli.innerHTML = output 
+                hiddenli.setAttribute('id' , 'childELE')
+                hiddenli.id += ' '+newClass+counter;
+                hiddenli.setAttribute('ondrop',"dragDrop(event)")
+                hiddenli.childNodes[0].childNodes[3].setAttribute('class','HideIt')
+                hiddenli.childNodes[0].childNodes[5].setAttribute('class','HideIt')
+                hiddenli.setAttribute('class','subCategoryNameInList')
+                let parentEle = document.querySelector('.'+parent.value.split(' ').join(''));
+                parentEle.appendChild(hiddenli)
+                parentEle.className += ' '+parent.value.split(' ').join('')
+                categoryName.value = "";
+                description.value = "";
+                tags.value = "";
+                parent.value = "none";
+            }
+        document.querySelector('')
+    
     }
 }
 
@@ -98,30 +143,149 @@ let LIs = document.querySelectorAll('.categoryNameInList');
 
 
 function dragStart(e){
-    e.dataTransfer.setData("id", e.target.id);
+    e.dataTransfer.setData("id", e.target.parentElement.parentElement.id);
+    console.log(e.target.parentElement.parentElement.id.startsWith('parentELE'))
 }
 function dragOver(e){
     e.preventDefault();
 }
 function dragDrop(e){
-    console.log(e.target.className)
     e.preventDefault();
     let data = e.dataTransfer.getData("id");
-    // let temp1 = document.getElementById(data)
-    // let temp2 = document.getElementById(e.target.id);
+    // if(e.target.parentElement.parentElement.id.startsWith('parentELE')){
+    //     console.log('yes');
+    // }else{
+    //     console.log('no')
+    // }
 
-    let first = document.getElementById(document.getElementById(data).parentElement.parentElement.id)
-    let second = document.getElementById(document.getElementById(e.target.id).parentElement.parentElement.id)
+    console.log('=======')
+    console.log(data +  " and is" +e.target.parentElement.parentElement.id);
+    console.log('=======')
 
-    let tempr = second.innerHTML 
-    second.innerHTML = first.innerHTML
-    first.innerHTML = tempr
+    if(data.startsWith('parentELE') == true && e.target.parentElement.parentElement.id.startsWith('childELE') == true){
+        alert("ERROR!! can/'t add Main Category to Sub Category ")
+    }else if(data.startsWith('childELE') == true && e.target.parentElement.parentElement.id.startsWith('parentELE') == true){
+        alert("ERROR!! can/'t add Sub Category to Main Category ")
+    }else{
+        let first = document.getElementById(data);
+        let second = document.getElementById(e.target.parentElement.parentElement.id);
+        let tempr = second.innerHTML 
+        second.innerHTML = first.innerHTML
+        first.innerHTML = tempr
+    }
+}
 
+function DisplayEditSec(id){
+    let showHiddenBox = document.getElementById(id)
+    if(showHiddenBox.style.display == "block"){
+        showHiddenBox.style.display = "none";
+    }else{
+        showHiddenBox.style.display = "block";
+    }
+}
+
+function EditListCategory(id){
+   let DATA = [...document.getElementById(id).childNodes[9].childNodes]
+   let CategoryValue = DATA[1].innerHTML;
+   let DescriptionValue = DATA[3].innerHTML;
+   let TagsValue = DATA[5].innerHTML;
+
+   let CheckActivity =  DATA[9].className.split(' ');
+   console.log(CheckActivity);
+    // if(CheckActivity[1] == 'active'){
+    //     let activating = document.querySelector('.ActiveDeactiveToggle')
+    //     console.log(activating)
+    // }
+
+    document.querySelector('.categoryInput').value = CategoryValue
+    document.querySelector('.descriptionInput').value = DescriptionValue
+    document.querySelector('.tagsInput').value = TagsValue;
+
+    document.querySelector('.HiddenAddNewCategory').style.display = "block"
+    document.querySelector('.MainBody').style.display = "none"
+
+    let SAVEBTNFTR = document.querySelector('.SavebtnForFooter');
+    SAVEBTNFTR.setAttribute('onclick' , `additionOfList(${id})`)
+
+    document.querySelector('.SectionForDirectDeleteAndEdit').style.display = "none"
+}
+function DeleteListCategory(id){
+    let deleteLi = document.getElementById(id).parentElement;
+    deleteLi.outerHTML = ""
 }
 
 
+function AddQuality(){
+    let inputDisplay =  document.querySelector('.addNewQuality');
+    let AddBtnDisplay = document.querySelector('.addNewQualityBtn');
+    if(inputDisplay.style.display == 'block' && AddBtnDisplay.style.display == 'block'){
+        inputDisplay.style.display = 'none';
+        AddBtnDisplay.style.display = 'none';
+    }else{
+        inputDisplay.style.display = 'block';
+        AddBtnDisplay.style.display = 'block';
+    }
+}
+
+function addQualityBtn(e){
+    e.preventDefault();
+    let parenToBeAppended = document.querySelector('.addQualityList');
+    let liValueAdded = document.querySelector('.addNewQuality').value;
+    let CLASS = liValueAdded
+    if(liValueAdded == 0){
+        alert('please add quality')
+    }else{
+    let OutPut = `<div class="eachSectionOfQuality">
+                        <img draggable="true" id=${liValueAdded}${liValueAdded}${Math.random()+Math.random()} class="Image" src="drag.png" />
+                        <p class="Quality">${liValueAdded}</p>
+                        <ion-icon data-toggle="tooltip" title="Delete" onclick="deleteQuality(${CLASS})" class="iconForDeleteQuality" name="ellipsis-vertical-outline"></ion-icon>
+                    </div>`
+    let li = document.createElement('li');
+    li.setAttribute('ondrop' ,"dragDropforQualityList(event)");
+    li.setAttribute('ondragover' ,"dragOverforQualityList(event)");
+    li.setAttribute('ondragstart',"dragStartforQualityList(event)")
+    li.setAttribute('id',liValueAdded);
+    li.innerHTML = OutPut;
+    console.log(li)
+    parenToBeAppended.appendChild(li);
+    document.querySelector('.addNewQuality').value = "";
+    document.querySelector('.addNewQuality').style.display = "none";
+    document.querySelector('.addNewQualityBtn').style.display = "none";
+    }
+}
+
+function dragStartforQualityList(e){
+    e.dataTransfer.setData('id',e.target.id);
+}
+function dragOverforQualityList(e){
+    e.preventDefault()
+}
+function dragDropforQualityList(e){
+    let dragged = e.dataTransfer.getData('id');
+
+    let FirstLI = document.getElementById(dragged).parentElement.parentElement;
+    let secondLI = document.getElementById(e.target.id).parentElement.parentElement;
+
+    let temps = secondLI.innerHTML;
+    secondLI.innerHTML = FirstLI.innerHTML;
+    FirstLI.innerHTML = temps;
+} 
+
+function deleteQuality(ClassName){
+    ClassName.outerHTML = "";
+}
 
 
-
-
-
+function LinkActivation(id){
+    console.log(id)
+    let EachElementShown = [...document.querySelector(".asideSectionList").children]
+    // console.log(EachElement)
+    EachElementShown.map( (ele)=> {
+        console.log(ele)
+       if(id == ("Shown" + EachElementShown.indexOf(ele))){
+        document.getElementById(id).setAttribute('class' , 'SelectedAsideElement')
+       }else{
+        document.getElementById("Shown" + EachElementShown.indexOf(ele)).setAttribute('class' , 'asideSection')
+       }
+   })    
+}

@@ -23,20 +23,20 @@
                         <p class="asideBarBrandingTitle" >OstaBay</p>
                     </div>
                     <ul class="asideSectionList">
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Companies</a><div class="Notification">4</div></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="person-outline"></ion-icon><a class="Link" href="#">Categories</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Products</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Attributes</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Country mst</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Packaging mst</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Finance</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="document-outline"></ion-icon><a class="Link" href="#">Request for Quote</a><div class="Notification">4</div></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Orders</a><div class="Notification">4</div></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Currency</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Metrices</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="person-outline"></ion-icon><a class="Link" href="#">Settings</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Marketing</a></li>
-                        <li class="ListELements"><ion-icon class="iconForCompanies" name="podium-outline"></ion-icon><a class="Link" href="#">Listing Services</a></li>
+                        <li class="ListELements" id="Shown0" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Companies</a><div class="Notification">4</div></li>
+                        <li class="ListELements" id="Shown1" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="person-outline"></ion-icon><a class="Link" href="#">Categories</a></li>
+                        <li class="ListELements" id="Shown2" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Products</a></li>
+                        <li class="ListELements" id="Shown3" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Attributes</a></li>
+                        <li class="ListELements" id="Shown4" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Country mst</a></li>
+                        <li class="ListELements" id="Shown5" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Packaging mst</a></li>
+                        <li class="ListELements" id="Shown6" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="square-outline"></ion-icon><a class="Link" href="#">Finance</a></li>
+                        <li class="ListELements" id="Shown7" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="document-outline"></ion-icon><a class="Link" href="#">Request for Quote</a><div class="Notification">4</div></li>
+                        <li class="ListELements" id="Shown8" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Orders</a><div class="Notification">4</div></li>
+                        <li class="ListELements" id="Shown9" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Currency</a></li>
+                        <li class="ListELements" id="Shown10" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Metrices</a></li>
+                        <li class="ListELements" id="Shown11" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="person-outline"></ion-icon><a class="Link" href="#">Settings</a></li>
+                        <li class="ListELements" id="Shown12" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="grid-outline"></ion-icon><a class="Link" href="#">Marketing</a></li>
+                        <li class="ListELements" id="Shown13" onclick="LinkActivation(id)"><ion-icon class="iconForCompanies" name="podium-outline"></ion-icon><a class="Link" href="#">Listing Services</a></li>
                     </ul>
                 </aside>
             </div>
@@ -65,80 +65,8 @@
                             <p class="subNavProducts"> Sub-category/Products </p>
                             <p class="subNavActiveDeactive"> Active/Deactive </p>
                         </div>
-                        <hr>
                         <div class="sectionToDisplayCategoryList">
-                            <ul class="categoryDataList">
-                              <!--  <li class="categoryNameInList">
-                                    <div class="OuterShell">
-                                        <img class="dragLogo" src="drag.png"/>
-                                        <ion-icon class="arrowIcon1" id="show1" onclick="show(id)" name="caret-forward-outline"></ion-icon>
-                                        <ion-icon class="arrowIcon2" id="hideshow1" onclick="hide(id)"  name="caret-down-outline"></ion-icon>
-                                        <div class="IMG"></div>
-                                        <div class="ListelementsDisplay">
-                                            <p class="categoryName">Natural stones</p>
-                                            <p class="descriptionForCategory"> some description goes here... </p>
-                                            <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
-                                            <p class="subCategoryOrProductsForCategory">2</p>
-                                            <div class="ActiveDeactiveTogglerSwitch" onclick="this.classList.toggle('active')">
-                                                <div class="ActiveDeactiveToggler "></div>
-                                            </div>
-                                        </div>
-                                        <ion-icon class="iconForDeleteandEdit" name="ellipsis-vertical-outline"></ion-icon>
-                                    </div>
-                                    <ul class="subCategoryHidden">
-                                        <li class="subCategoryNameInList">
-                                            <div class="OuterShell">
-                                                <img class="dragLogo" src="drag.png"/>
-                                                <div class="IMG"></div>
-                                                <div class="ListelementsDisplay">
-                                                    <p class="categoryName">Granite</p>
-                                                    <p class="descriptionForCategory"> some description goes here... </p>
-                                                    <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
-                                                    <p class="subCategoryOrProductsForCategory">3</p>
-                                                    <div class="ActiveDeactiveTogglerSwitch hidden" onclick="this.classList.toggle('active')">
-                                                        <div class="ActiveDeactiveToggler "></div>
-                                                    </div>
-                                                </div>
-                                                <ion-icon class="iconForDeleteandEditinSubCategory" name="ellipsis-vertical-outline"></ion-icon>
-                                            </div>
-                                        </li>
-                                        <li class="subCategoryNameInList">
-                                            <div class="OuterShell">
-                                                <img class="dragLogo" src="drag.png"/>
-                                                <div class="IMG"></div>
-                                                <div class="ListelementsDisplay">
-                                                    <p class="categoryName">Marble</p>
-                                                    <p class="descriptionForCategory"> some description goes here... </p>
-                                                    <p class="tagsForCategory"> tag1,tag2,tag3,tag4,tag5 </p>
-                                                    <p class="subCategoryOrProductsForCategory">5</p>
-                                                    <div class="ActiveDeactiveTogglerSwitch hidden" onclick="this.classList.toggle('active')">
-                                                        <div class="ActiveDeactiveToggler "></div>
-                                                    </div>
-                                                </div> 
-                                                <ion-icon class="iconForDeleteandEditinSubCategory" name="ellipsis-vertical-outline"></ion-icon> 
-                                            </div>            
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="categoryNameInList">
-                                    <div class="OuterShell">
-                                        <img class="dragLogo" src="drag.png"/>
-                                        <ion-icon class="arrowIcon1" id="show2" onclick="shoe(id)" name="caret-forward-outline"></ion-icon>
-                                        <ion-icon class="arrowIcon2" id="hideshow2" onclick="hide(id)" name="caret-down-outline"></ion-icon>
-                                        <div class="IMG"></div>
-                                        <div class="ListelementsDisplay">
-                                            <p class="categoryName">Agriculture Produce</p>
-                                            <p class="descriptionForCategory"> some description goes here... </p>
-                                            <p class="tagsForCategory"> tag1,tag2, </p>
-                                            <p class="subCategoryOrProductsForCategory">5</p>
-                                            <div class="ActiveDeactiveTogglerSwitch " onclick="this.classList.toggle('active')">
-                                                <div class="ActiveDeactiveToggler "></div>
-                                            </div>
-                                        </div>
-                                        <ion-icon class="iconForDeleteandEdit" name="ellipsis-vertical-outline"></ion-icon>
-                                    </div>
-                                </li>-->
-                            </ul>
+                            <ul class="categoryDataList"></ul>
                         </div>
                     </div>
                 </div>
@@ -150,7 +78,7 @@
                     <div class="HeaderSection">
                         <ion-icon class="BackArrow" name="arrow-back-outline"></ion-icon>
                         <p class="headerText" > Add new category</p>
-                        <button class="Savebtn" >Save</button>
+                        <button class="Savebtn" onclick="appendingList()" >Save</button>
                         <ion-icon class="EditOptionOfAddCategory" name="ellipsis-horizontal-outline"></ion-icon>
                     </div>
                 </header>
@@ -169,7 +97,7 @@
                             </select><br>
                             <label class="featuredLabel">Featured photo</label><br>
                             <div class="FeaturedSection">
-                                <p class="addNewPhoto">+ add new Photo</p> <ion-icon class="Clip" name="link-outline"></ion-icon><p class="addExistingFile">Link existing photo</p><br>
+                                <label class="addNewPhoto"> <input accept="image/*" name="UPLOADFILE" id="UPLOADFILE" type="file"/> + add new Photo</label> <ion-icon class="Clip" name="link-outline"></ion-icon><p class="addExistingFile">Link existing photo</p><br>
                             </div>
                             <label class="photos">Photo</label><br>
                             <div class="photosSection">
@@ -217,14 +145,23 @@
                                     </div>
                             </div>
                             <label class="labelForQuality">Quality</label><br>
-                            <p class="qualityAddFile">+Add quality</p>
-
-                            <button class="SavebtnForFooter" type="button">Save</button>
+                            <p class="qualityAddFile" onclick="AddQuality()">+Add quality</p>
+                            <div class="addQualitySection">
+                                <input class="addNewQuality" type="text"/>
+                                <button class="addNewQualityBtn" onclick="addQualityBtn(event)">+ add</button><br>
+                            </div>
+                            <ul class="addQualityList"></ul>
+                            <button class="SavebtnForFooter" onclick="appendingList()" type="button">Save</button>
                         </form> 
                         <div class="rightAsideSection">
                             <div class="categoryStatu" id="sectionForContent">
                                 <p class="Text1">Category Status</p>
                                 <p class="Text2">Deactive</p>
+                                <div class="SwitchActivity">
+                                    <div class="ActiveDeactiveToggle" onclick="this.classList.toggle('active')">
+                                        <div class="ActiveDeactiveTogglecircle"></div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="createdBy" id="sectionForContent">
                                 <p class="Text1">Created by</p>
