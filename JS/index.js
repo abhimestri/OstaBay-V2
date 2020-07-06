@@ -1,4 +1,8 @@
+// global decleration part
 let counter = 0,counter2 = 0;
+
+
+
 // navigate into pages 
 document.querySelector('.btnToAddNewCategory').addEventListener('click',function(){
     document.querySelector('.HiddenAddNewCategory').style.display = "block"
@@ -10,9 +14,9 @@ document.querySelector('.BackArrow').addEventListener('click',function(){
     document.querySelector('.MainBody').style.display = "block"
 })
 
-// add List to UL
 
 
+// to check if its a edit functionality to edit selected element or add new list element
 function additionOfList(id){
     let categoryName,description,tags;
     categoryName = document.querySelector('.categoryInput');
@@ -21,8 +25,6 @@ function additionOfList(id){
     if(id){
         console.log('inside id')
         let DATA = [...document.getElementById(id).childNodes[9].childNodes]
-        console.log(CheckActivity);
-        console.log(DATA)
         DATA[1].innerText = categoryName.value;
         DATA[3].innerText = description.value;
         DATA[5].innerText = tags.value;
@@ -30,6 +32,7 @@ function additionOfList(id){
         description.value = "";
         tags.value = "";
         parent.value = "none";
+        document.querySelector('.SectionForDirectDeleteAndEdit').style.display = "none"
         let SAVEBTNFTR = document.querySelector('.SavebtnForFooter');
         SAVEBTNFTR.setAttribute('onclick' , `additionOfList()`)
     }else{
@@ -37,12 +40,10 @@ function additionOfList(id){
     }
 }
 
-
-
+// add List to UL
+// append list element to admin panel
 function appendingList(){
-
     let categoryName,description,tags;
-
     categoryName = document.querySelector('.categoryInput');
     description = document.querySelector('.descriptionInput');
     tags = document.querySelector('.tagsInput');
@@ -112,11 +113,11 @@ function appendingList(){
                 tags.value = "";
                 parent.value = "none";
             }
-        document.querySelector('')
-    
     }
 }
 
+
+// show and hide sub category for main category
 function show(id){
     let sideArrow = document.getElementById(id);
     let parent = sideArrow.parentElement.parentElement
@@ -141,7 +142,7 @@ function hide(id){
 
 let LIs = document.querySelectorAll('.categoryNameInList');
 
-
+// drag and drop list elements
 function dragStart(e){
     e.dataTransfer.setData("id", e.target.parentElement.parentElement.id);
     console.log(e.target.parentElement.parentElement.id.startsWith('parentELE'))
@@ -152,15 +153,6 @@ function dragOver(e){
 function dragDrop(e){
     e.preventDefault();
     let data = e.dataTransfer.getData("id");
-    // if(e.target.parentElement.parentElement.id.startsWith('parentELE')){
-    //     console.log('yes');
-    // }else{
-    //     console.log('no')
-    // }
-
-    console.log('=======')
-    console.log(data +  " and is" +e.target.parentElement.parentElement.id);
-    console.log('=======')
 
     if(data.startsWith('parentELE') == true && e.target.parentElement.parentElement.id.startsWith('childELE') == true){
         alert("ERROR!! can/'t add Main Category to Sub Category ")
@@ -175,6 +167,7 @@ function dragDrop(e){
     }
 }
 
+// display box for edit and delete option
 function DisplayEditSec(id){
     let showHiddenBox = document.getElementById(id)
     if(showHiddenBox.style.display == "block"){
@@ -184,19 +177,14 @@ function DisplayEditSec(id){
     }
 }
 
+
+// edit list element
 function EditListCategory(id){
+    document.getElementById(id+id).style.display = "none"
    let DATA = [...document.getElementById(id).childNodes[9].childNodes]
    let CategoryValue = DATA[1].innerHTML;
    let DescriptionValue = DATA[3].innerHTML;
    let TagsValue = DATA[5].innerHTML;
-
-   let CheckActivity =  DATA[9].className.split(' ');
-   console.log(CheckActivity);
-    // if(CheckActivity[1] == 'active'){
-    //     let activating = document.querySelector('.ActiveDeactiveToggle')
-    //     console.log(activating)
-    // }
-
     document.querySelector('.categoryInput').value = CategoryValue
     document.querySelector('.descriptionInput').value = DescriptionValue
     document.querySelector('.tagsInput').value = TagsValue;
@@ -207,14 +195,16 @@ function EditListCategory(id){
     let SAVEBTNFTR = document.querySelector('.SavebtnForFooter');
     SAVEBTNFTR.setAttribute('onclick' , `additionOfList(${id})`)
 
-    document.querySelector('.SectionForDirectDeleteAndEdit').style.display = "none"
 }
+
+// delete list element
 function DeleteListCategory(id){
     let deleteLi = document.getElementById(id).parentElement;
     deleteLi.outerHTML = ""
 }
 
 
+// add quality
 function AddQuality(){
     let inputDisplay =  document.querySelector('.addNewQuality');
     let AddBtnDisplay = document.querySelector('.addNewQualityBtn');
@@ -254,6 +244,8 @@ function addQualityBtn(e){
     }
 }
 
+
+// drag and drop list elements
 function dragStartforQualityList(e){
     e.dataTransfer.setData('id',e.target.id);
 }
@@ -271,11 +263,15 @@ function dragDropforQualityList(e){
     FirstLI.innerHTML = temps;
 } 
 
+
+// delete quality list element
 function deleteQuality(ClassName){
     ClassName.outerHTML = "";
 }
 
 
+
+// add activation class to link 
 function LinkActivation(id){
     console.log(id)
     let EachElementShown = [...document.querySelector(".asideSectionList").children]
